@@ -5,35 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDDO</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
-    <div class="container">
-        <h1>IDDO</h1>
-       <div class="row">
-            <div class="col-6 col-p-12"><p>col 6</p></div>
-            <div class="col-6 col-p-12"><p>col 6</p></div>
-       </div>
-       <hr>
-       <div class="row">
-        <div class="col-3 col-t-6 col-p-12"><p>col 3</p></div>
-        <div class="col-3 col-t-6 col-p-12"><p>col 3</p></div>
-        <div class="col-3 col-t-6 col-p-12"><p>col 3</p></div>
-        <div class="col-3 col-t-6 col-p-12"><p>col 3</p></div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-3 col-p-12">3</div>
-        <div class="col-9 col-p-12">9</div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-2 col-t-4 col-p-6"><p>col 2</p></div>
-        <div class="col-2 col-t-4 col-p-6"><p>col 2</p></div>
-        <div class="col-2 col-t-4 col-p-6"><p>col 2</p></div>
-        <div class="col-2 col-t-4 col-p-6"><p>col 2</p></div>
-        <div class="col-2 col-t-4 col-p-6"><p>col 2</p></div>
-        <div class="col-2 col-t-4 col-p-6"><p>col 2</p></div>
-    </div>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-2 col-m-6">
+                    <h1><a href="">IDDO</a></h1>
+                </div>
+                <div class="col-10 col-m-6">
+                    <label for="menu" hidden class="btn"><span></span><span></span><span></span></label>
+                    <input type="checkbox" hidden id="menu">
+                    <div class="collapse">
+                        <div class="flex justify-space-between align-center">
+                            <nav>
+                                <ul class="flex">
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#services">Services</a></li>
+                                    <li><a href="#portfolio">Portfolio</a></li>
+                                    <li><a href="#about">About</a></li>
+                                    <li><a href="#contact">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <button class="btn">Sign up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner" role="banner">
+        <div class="container">
+            <div class="flex align-center">
+                <div><button class="fa fa-play-circle-o"></button></div>
+                <div>
+                    <p class="thin">Let me show you a few things</p>
+                    <a href="javascript:void(0)">Click to play video</a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
