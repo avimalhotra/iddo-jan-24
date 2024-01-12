@@ -5,6 +5,7 @@ button{ cursor: pointer; padding: 0;}
 img{ vertical-align: bottom;}
 label{ display: block;}
 ul{ list-style: none; padding: 0;}
+canvas:empty{ background: aqua;}
 
 @font-face {
     font-family: proxima;
@@ -29,6 +30,8 @@ html{
     font-size: 15px;
     --ff: proxima, sans-serif;
     --red:#ca3c3c;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 body{
     font-size: 16px;
@@ -62,7 +65,7 @@ body{
 
 /* custom css */
 
-header{ background: #000; color: #fff;}
+header{ background: #000; color: #fff; position: sticky; top: 0; z-index: 1;}
 header a{ color: inherit; line-height: 80px;}
 h1{ font-size: 2rem;}
 h1 a{ display: inline-block;}
@@ -95,13 +98,60 @@ h2{ font-size: 72px; border-bottom: 10px solid; line-height: 60px; margin-bottom
 .wrap-5{background: #ebebeb; color: #363636; padding: 100px 0;}
 .wrap-5 .btn{ margin: 0 10px 4rem 0;}
 .wrap-5 .btn.active{ background: var(--red); color: #fff; border-color: var(--red);}
-.work{ position: relative; margin-bottom: 2rem;}
-.work figcaption{ position: absolute; background: #fff; bottom: 0; left: 0; right: 0; text-align: center; padding: 20px 0; display: none;}
+.work{ position: relative; margin-bottom: 2rem; overflow: hidden;}
+.work figcaption{ position: absolute; background: #fff; bottom: -100px; left: 0; right: 0; text-align: center; padding: 20px 0; transition: .3s; }
 .work img{max-width: 100%; height: auto;}
 .work h3{font-size: 18px; line-height: 40px; color: var(--red);}
 .work p{ font-size: 14px; line-height: 20px; color: #898989; font-weight: 100;}
-.work:hover figcaption{ display: block;}
+.work:hover figcaption{ bottom: 0;}
+.seemore{ border: none; background: none; font-size: 36px; color: var(--red);}
 
+
+
+.wrap-6{ background: #666; color: #fff; padding: 4rem 0 2rem; }
+.reviews{ text-align: center;}
+.review{ display: none;}
+.review.active{ display: block;}
+.review blockquote p{ font-size: 36px; line-height: 41px; font-weight: 100;}
+.review blockquote img{ margin: 10px 0; }
+.pager{display: flex; justify-content: center;}
+.pager li{ margin: 30px 5px;}
+.pager li a{ display: block; width: 10px; height: 10px; border: 2px solid #fff; border-radius: 50%;}
+.pager li a.active{ background: #fff;}
+
+
+
+.wrap-7{background: #fff; color: #363636; padding: 100px 0;}
+.team{ position: relative; margin: 50px 0; }
+.social{ position: absolute; top: 60px; right: 60px; }
+.social ul{ display: flex;}
+.social li{ margin-left: 10px;}
+.social a{ display: block; width: 50px; line-height: 50px; border-radius: 50%; background: var(--red); color: #fff; font-size: 24px; text-align: center;}
+.gap{ margin: 50px 0 0 100px;}
+.gap h3{ color: var(--red); font-size: 18px; margin-bottom: 10px; }
+.gap small{ color: #898989; font-size: 14px; font-weight: 100;  }
+.gap p{ color: #363636; font-size: 14px; font-weight: 100; line-height: 22px; margin-top: 2rem; }
+
+
+
+.wrap-8{ background: #666; color: #fff; text-align: center; padding: 80px 0 30px;}
+.wrap-8 span.fa{ font-size: 72px;}
+.wrap-8 p{ font-weight: 100; font-size: 72px;}
+.wrap-8 b{ font-size: 18px; margin-bottom: 50px; display: block;}
+
+
+
+.wrap-9{background: #fff; color: #363636; padding: 100px 0;}
+.wrap-9 canvas{ margin-top: 50px; }
+.accordion{ margin-top: 50px;}
+.accordion li{ margin-bottom: 10px;}
+.accordion li a{ color: #898989; display: block; border: 1px solid #ebebeb; padding: 13px; border-radius: 10px; font-weight: bold; font-size: 14px;}
+.accordion li a span.fa{ margin-right: 18px;}
+.accordion li p{ display: none; margin: 20px; color: #363636; font-weight: 100; font-size: 14px;}
+.accordion li.active p{ display: block;}
+.accordion li.active a{ color: var(--red);}
+.accordion li a::after{ content: '+'; float: right;}
+.accordion li.active a::after{ content: '-'; }
 
 
 
@@ -109,6 +159,7 @@ h2{ font-size: 72px; border-bottom: 10px solid; line-height: 60px; margin-bottom
 @media screen and (max-width:1220px){
     html{ font-size: 12px; }
     h2{ font-size: 62px;}
+    .social{ right: 0;}
 }
 
 @media screen and (max-width:980px){
@@ -123,6 +174,10 @@ h2{ font-size: 72px; border-bottom: 10px solid; line-height: 60px; margin-bottom
 .col-t-9{ flex-basis: 75%; max-width: 75%; }
 .col-t-10{ flex-basis: 83.33%; max-width: 83.33%; }
 .col-t-12{ flex-basis: 100%; max-width: 100%; }
+.social{ top: 0; }
+.social ul{ flex-flow: column wrap;}
+.social ul li{ margin-bottom: 10px;}
+.gap{ margin-left: 50px;}
 }
 
 @media screen and (max-width:767px){
@@ -137,6 +192,7 @@ html{ font-size: 10px; }
 .col-m-8{ flex-basis: 66.66%; max-width: 66.66%; }
 .col-m-9{ flex-basis: 75%; max-width: 75%; }
 .col-m-10{ flex-basis: 83.33%; max-width: 83.33%; }
+.col-m-12{ flex-basis: 100%; max-width: 100%; }
 .collapse{ display: none; position: absolute; background: #000; left: 0; right: 0; top: 80px; text-align: right; padding: 1rem;}
 header label{ display: inline-block;}
 .collapse nav{ width: 100%;}
