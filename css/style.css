@@ -6,6 +6,7 @@ img{ vertical-align: bottom;}
 label{ display: block;}
 ul{ list-style: none; padding: 0;}
 canvas:empty{ background: aqua;}
+canvas{ max-width: 100%; height: auto}
 
 @font-face {
     font-family: proxima;
@@ -74,7 +75,7 @@ nav a{ display: block; padding: 0 15px; }
 .btn{ width: 90px; height: 35px; border: 2px solid; background: none; color: var(--red); border-radius: 10px; font: 16px var(--ff);}
 header label{ display: none; position: absolute; right: 1rem; top: 20px;}
 header input[type="checkbox"]:checked+.collapse{ display: block; }
-.btn span{ display: block; height: 2px;  background: var(--red); width: 70px; margin: 6px auto;}
+header .btn span{ display: block; height: 2px;  background: var(--red); width: 70px; margin: 6px auto;}
 
 
 .banner{ background: #666; color: #fff; padding: 200px 0; }
@@ -154,6 +155,31 @@ h2{ font-size: 72px; border-bottom: 10px solid; line-height: 60px; margin-bottom
 .accordion li.active a::after{ content: '-'; }
 
 
+.wrap-10{ background: var(--red); padding: 23px 0 22px; }
+.wrap-10 .btn{ background: #fff;}
+.wrap-10 input{ width: 370px; background: none; border: none; font: 100 36px var(--ff); color: #fff; height: 35px;}
+.wrap-10 input::placeholder{ color: #ffff;}
+
+.wrap-11{ background: #7f7f7f; color: #fff; padding: 28px 0 0 0;}
+.wrap-11 .box{ margin-bottom: 27px; background: #a6a6a6; line-height: 95px; text-align: center; font-size: 24px;}
+
+
+.wrap-12{background: #ebebeb; color: #363636; padding: 100px 0;}
+address{ margin: 1rem 0; font: 100 14px var(--ff) }
+.social-sm{ margin: 1rem 0; }
+.social-sm li{margin-right: 10px; }
+.social-sm a{ color: var(--red); }
+.wrap-12 label{ border: 2px solid; display: block; margin: 1rem 0; padding: 17px;}
+.wrap-12 input{ background: none; border: none;}
+.wrap-12 textarea{background: none; border: none; resize: none; vertical-align: top; height: 40px;}
+.wrap-12 button{ margin: 1rem 0; width: 100%; height: 78px; background: #fff; border: none; color: var(--red); font: 16px var(--ff); border-radius: 10px; }
+.wrap-12 button span{ font-size: 36px; vertical-align: middle;}
+.wrap-12 input:focus,.wrap-12 textarea:focus{ outline: none;}
+.wrap-12 label:focus-within{ border-color: var(--red); }
+
+
+.wrap-13{ background: #252525; text-align: center; color: #bbb; padding: 50px 0;}
+.top{ border: none; background: none; color: var(--red); font-size: 36px; }
 
 
 @media screen and (max-width:1220px){
@@ -178,6 +204,8 @@ h2{ font-size: 72px; border-bottom: 10px solid; line-height: 60px; margin-bottom
 .social ul{ flex-flow: column wrap;}
 .social ul li{ margin-bottom: 10px;}
 .gap{ margin-left: 50px;}
+.col-t-hide{ display: none;}
+.col-t-auto{ flex: 1 0 33.33%; max-width: 50%; }
 }
 
 @media screen and (max-width:767px){
@@ -208,4 +236,13 @@ header label{ display: inline-block;}
     .col-p-12{ flex-basis: 100%; max-width: 100%; }
     .banner .flex{ flex-flow: column wrap; }
     .banner button{ margin-bottom: 2rem; }
+    .wrap-10 input{ font-size: 25px; width: 240px;}
+    .col-t-auto{ max-width: 100%;}
+}
+
+@media screen and (max-width:359px){
+    .wrap-10 input{ width: 160px;}
+    h2{ font-size: 52px;}
+    .wrap-5 .btn{width: 75px;}
+    .col-t-auto{ flex: 1 0 100%; max-width: 100%;}
 }
