@@ -5,7 +5,6 @@ button{ cursor: pointer; padding: 0;}
 img{ vertical-align: bottom;}
 label{ display: block;}
 ul{ list-style: none; padding: 0;}
-canvas:empty{ background: aqua;}
 canvas{ max-width: 100%; height: auto}
 
 @font-face {
@@ -77,6 +76,21 @@ header label{ display: none; position: absolute; right: 1rem; top: 20px;}
 header input[type="checkbox"]:checked+.collapse{ display: block; }
 header .btn span{ display: block; height: 2px;  background: var(--red); width: 70px; margin: 6px auto;}
 header .btn{ color: #db5050; }
+header a.active{ color: #db5050; position: relative;}
+header a.active::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0;
+    bottom: 20%;
+    height: 2px;
+    background: #db5050;
+    animation: fw 1s 1 both;
+}
+@keyframes fw{
+    0%{ width: 0;}
+    100%{ width: 100%;}
+}
 
 
 .banner{ background: #666; color: #fff; padding: 200px 0; }
@@ -114,14 +128,17 @@ h2{ font-size: 72px; border-bottom: 10px solid; line-height: 60px; margin-bottom
 
 .wrap-6{ background: #666; color: #fff; padding: 4rem 0 2rem; }
 .reviews{ text-align: center;}
-.review{ display: none;}
-.review.active{ display: block;}
 .review blockquote p{ font-size: 36px; line-height: 41px; font-weight: 100;}
 .review blockquote img{ margin: 10px 0; }
-.pager{display: flex; justify-content: center;}
+/* .pager{display: flex; justify-content: center;}
 .pager li{ margin: 30px 5px;}
 .pager li a{ display: block; width: 10px; height: 10px; border: 2px solid #fff; border-radius: 50%;}
 .pager li a.active{ background: #fff;}
+ */
+ .bx-wrapper{ background: none; border: none; box-shadow: 0 0;}
+ .bx-wrapper img{display: inline;}
+ .bx-wrapper .bx-pager.bx-default-pager a{background: none; border: 2px solid #fff;}
+ .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus{ background: #fff;}
 
 
 
@@ -184,6 +201,16 @@ address{ margin: 1rem 0; font: 100 14px var(--ff) }
 
 .wrap-13{ background: #252525; text-align: center; color: #bbb; padding: 50px 0;}
 .top{ border: none; background: none; color: var(--red); font-size: 36px; }
+
+
+
+/* popup */
+.overlay{ position: fixed; inset: 0; background: #000b; z-index: 2; }
+.popup{ position: fixed; background: #fff; padding: 20px; left: 50%; transform: translateX(-50%); top: 100px; z-index: 3; text-align: center;}
+.popup form div{ margin : 1rem 0; text-align: left;}
+.popup form input{ float: right; margin-left: 20px; padding: 5px; border: 1px solid #aaa; border-radius: 5px;}
+.popupform{ display: none;}
+.close{ position: absolute; right: 5px; top: 5px; color: var(--red); border: 1px solid; background: none; font-size: 20px; width: 30px; height: 30px; border-radius: 5px;}
 
 
 @media screen and (max-width:1220px){
